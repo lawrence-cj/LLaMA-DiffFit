@@ -293,12 +293,28 @@ It is also important to be mindful of the language barrier, as many Chinese peop
 ## Citation
 If you find our DiffFit and this project useful, please kindly cite:
 ```bash
+@article{xie2023difffit,
+  title={DiffFit: Unlocking Transferability of Large Diffusion Models via Simple Parameter-Efficient Fine-Tuning},
+  author={Xie, Enze and Yao, Lewei and Shi, Han and Liu, Zhili and Zhou, Daquan and Liu, Zhaoqiang and Li, Jiawei and Li, Zhenguo},
+  journal={arXiv preprint arXiv:2304.06648},
+  year={2023}
+}
+
 @article{zhang2023llamaadapter,
   title = {LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention},
   author={Zhang, Renrui and Han, Jiaming and Zhou, Aojun and Hu, Xiangfei and Yan, Shilin and Lu, Pan and Li, Hongsheng and Gao, Peng and Qiao, Yu},
   journal={arXiv preprint arXiv:2303.16199},
   year={2023}
 }
+
+@misc{vicuna2023,
+    title = {Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90\%* ChatGPT Quality},
+    url = {https://vicuna.lmsys.org},
+    author = {Chiang, Wei-Lin and Li, Zhuohan and Lin, Zi and Sheng, Ying and Wu, Zhanghao and Zhang, Hao and Zheng, Lianmin and Zhuang, Siyuan and Zhuang, Yonghao and Gonzalez, Joseph E. and Stoica, Ion and Xing, Eric P.},
+    month = {March},
+    year = {2023}
+}
+
 ``` 
 
 
