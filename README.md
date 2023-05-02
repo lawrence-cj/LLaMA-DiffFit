@@ -28,7 +28,10 @@ cd peft && python setup.py develop
 Please request access to the pre-trained LLaMA from [this form](https://forms.gle/jk851eBVbX1m5TAv5) (official) or download the LLaMA-7B from [Hugging Face](https://huggingface.co/nyanko7/LLaMA-7B/tree/main) (unofficial). Then, obtain the weights of our LLaMA-DiffFit from [here](https://github.com/lawrence-cj/LLaMA-DiffFit/releases/tag/checkpoints). This file reads the foundation model from the Hugging Face model hub and the DiffFit weights from `output`
 ```
 cd project_dir
-python generate.py
+python generate.py \
+    --load_8bit \
+    --base_model 'output/pretrained/llama-7b-hf' \
+    --peft_weights 'output/llama_difffit'
 ```
 
 ### Training (`finetune.py`)
@@ -39,12 +42,36 @@ Near the top of this file is a set of hardcoded hyper-parameters that you should
 PRs adapting this code to support larger models are always welcome.
 ```
 cd project_dir
-python finetune_difffit.py --run your_exp_name
+python finetune_difffit.py \
+    --base_model 'output/pretrained/llama-7b-hf' \
+    --data_path 'alpaca_data_cleaned.json' \
+    --output_dir 'output/llama_difffit'
 ```
+We can also tweak our hyperparameters:
+
+```
+python finetune.py \
+    --base_model 'output/pretrained/llama-7b-hf' \
+    --data_path 'alpaca_data_cleaned.json' \
+    --output_dir 'output/llama_difffit' \
+    --batch_size 128 \
+    --micro_batch_size 4 \
+    --num_epochs 3 \
+    --learning_rate 1e-4 \
+    --cutoff_len 512 \
+    --val_set_size 2000 \
+    --eta_scale 1. \
+    --eta_layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] \
+    --target_modules '[q_proj,v_proj]' \
+```
+
 (Optional) Training with BitFit is also supported here
 ```
 cd project_dir
-python finetune_bitfit.py --run your_exp_name
+python finetune_bitfit.py \
+    --base_model 'output/pretrained/llama-7b-hf' \
+    --data_path 'alpaca_data_cleaned.json' \
+    --output_dir 'output/llama_bitfit'
 ```
 
 ### Dataset
