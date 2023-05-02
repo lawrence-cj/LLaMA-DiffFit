@@ -146,7 +146,7 @@ This file is now used by default in the training script.
 
 **Instruction**: Write a Python program that prints the first 10 Fibonacci numbers.
 
-**LLaMA-DiffFit & LLaMA-BitFit & Alpaca-LoRA**:
+**LLaMA-DiffFit & LLaMA-BitFit & Alpaca-LoRA with the same result**:
 
 ```python
 def fibonacci(n):
@@ -200,7 +200,7 @@ for i in range(2,10):
 
 **Instruction**: Write a program that prints the numbers from 1 to 100. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.
 
-**LLaMA-DiffFit & LLaMA-BitFit & Alpaca-LoRA**:
+**LLaMA-DiffFit & LLaMA-BitFit & Alpaca-LoRA with the same result**:
 
 ```python
 for i in range(1, 101):
