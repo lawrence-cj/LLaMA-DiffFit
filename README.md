@@ -339,6 +339,15 @@ If you find our DiffFit and this project useful, please kindly cite:
   year={2023}
 }
 ``` 
+```bash
+@misc{LLaMADiffFit2023,
+    title = {LLaMA-DiffFit: Efficient Finetuning LLaMA with DiffFit},
+    url = {https://github.com/lawrence-cj/LLaMA-DiffFit},
+    author = {Chen, Junsong and Ge Chongjian and Xie Enze},
+    month = {May},
+    year = {2023}
+}
+```
 
 
 ## Acknowledgement
