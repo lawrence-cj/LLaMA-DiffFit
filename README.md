@@ -61,10 +61,11 @@ This file is now used by default in the training script.
 - Users with multiple GPUs should take a look [here](https://github.com/tloen/alpaca-lora/issues/8#issuecomment-1477490259).
 
 ## Overview
-Efficiency Comparison:
-|  Model | Parameters
-| :-----: | :-----: |:-----:|
-|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |13G|
+**Efficiency Comparison:**
+
+|  Model | Parameters |
+| :-----: | :-----: |
+|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |
 |  [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) | 1.2M |
 |  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |
 |  LLaMA-BitFit | 1.4M |
