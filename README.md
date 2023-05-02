@@ -89,7 +89,7 @@ This file is now used by default in the training script.
 - We're continually fixing bugs and conducting training runs.
 - Users with multiple GPUs should take a look [here](https://github.com/tloen/alpaca-lora/issues/8#issuecomment-1477490259).
 
-## Overview
+### Overview
 **Efficiency Comparison:**
 
 |  Model | Parameters |
@@ -367,10 +367,10 @@ It is also important to be mindful of the language barrier, as many Chinese peop
 
 </details>
 
-## Contributors
+### Contributors
 [Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
 
-## Citation
+### Citation
 If you find our DiffFit and this project useful, please kindly cite:
 ```bash
 @article{xie2023difffit,
@@ -391,5 +391,5 @@ If you find our DiffFit and this project useful, please kindly cite:
 
 
 
-## Acknowledgement
+### Acknowledgement
 This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Alpaca-Lora](https://github.com/tloen/alpaca-lora), [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) and [Vicuna](https://vicuna.lmsys.org). Thanks for their wonderful works.
