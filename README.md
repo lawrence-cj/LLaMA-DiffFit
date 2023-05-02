@@ -287,6 +287,20 @@ When it comes to transportation, it's a good idea to use public transportation a
 **LLaMA-BitFit**: When traveling to China, it is important to be aware of local customs and etiquette. It is important to dress modestly and respectfully, especially when visiting temples and religious sites. 
 It is also important to be mindful of the language barrier, as many Chinese people do not speak English. Finally, it is important to be aware of the local laws and regulations, as they can vary from region to region.
 
+## Contributors
+[Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
+
+## Citation
+If you find our LLaMA-Adapter code and paper useful, please kindly cite:
+```bash
+@article{zhang2023llamaadapter,
+  title = {LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention},
+  author={Zhang, Renrui and Han, Jiaming and Zhou, Aojun and Hu, Xiangfei and Yan, Shilin and Lu, Pan and Li, Hongsheng and Gao, Peng and Qiao, Yu},
+  journal={arXiv preprint arXiv:2303.16199},
+  year={2023}
+}
+``` 
+
 
 ## Acknowledgement
 This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), and [Alpaca-Lora](https://github.com/tloen/alpaca-lora). Thanks for their wonderful works.
