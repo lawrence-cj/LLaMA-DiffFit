@@ -342,4 +342,4 @@ If you find our DiffFit and this project useful, please kindly cite:
 
 
 ## Acknowledgement
-This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Alpaca-Lora](https://github.com/tloen/alpaca-lora), and [Vicuna](https://vicuna.lmsys.org). Thanks for their wonderful works.
+This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Alpaca-Lora](https://github.com/tloen/alpaca-lora), [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) and [Vicuna](https://vicuna.lmsys.org). Thanks for their wonderful works.
