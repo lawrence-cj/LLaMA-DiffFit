@@ -299,24 +299,8 @@ If you find our DiffFit and this project useful, please kindly cite:
   journal={arXiv preprint arXiv:2304.06648},
   year={2023}
 }
-
-@article{zhang2023llamaadapter,
-  title = {LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention},
-  author={Zhang, Renrui and Han, Jiaming and Zhou, Aojun and Hu, Xiangfei and Yan, Shilin and Lu, Pan and Li, Hongsheng and Gao, Peng and Qiao, Yu},
-  journal={arXiv preprint arXiv:2303.16199},
-  year={2023}
-}
-
-@misc{vicuna2023,
-    title = {Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90\%* ChatGPT Quality},
-    url = {https://vicuna.lmsys.org},
-    author = {Chiang, Wei-Lin and Li, Zhuohan and Lin, Zi and Sheng, Ying and Wu, Zhanghao and Zhang, Hao and Zheng, Lianmin and Zhuang, Siyuan and Zhuang, Yonghao and Gonzalez, Joseph E. and Stoica, Ion and Xing, Eric P.},
-    month = {March},
-    year = {2023}
-}
-
 ``` 
 
 
 ## Acknowledgement
-This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), and [Alpaca-Lora](https://github.com/tloen/alpaca-lora). Thanks for their wonderful works.
+This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Alpaca-Lora](https://github.com/tloen/alpaca-lora), and [Vicuna](https://vicuna.lmsys.org). Thanks for their wonderful works.
