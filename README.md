@@ -7,7 +7,7 @@ This repository contains codes for efficiently finetuning LLM models (i.e., LLaM
 
 ### Introduction
 In addition to the training code, which runs within five hours on a single GPU (Minimum 26GB GPU memory),
-we publish a script for downloading and inference on the foundation model and DiffFit,
+we publish a script for downloading and inferencing on the foundation model and DiffFit,
 as well as the resulting [DiffFit weights themselves](https://github.com/lawrence-cj/LLaMA-DiffFit/releases/tag/checkpoints).
 To fine-tune cheaply and efficiently, we use Hugging Face's [PEFT](./peft) with DiffFit supported
 as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandbytes). With DiffFit finetuning, the model perform camparable to the Stanford Alpaca model.
