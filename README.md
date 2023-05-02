@@ -30,6 +30,7 @@ Then, obtain the weights of our LLaMA-DiffFit from [here](https://github.com/law
 This file reads the foundation model from the Hugging Face model hub and the DiffFit weights from `output`.
 ```
 cd project_dir
+unzip download_zip_file_name.zip ./output/
 python generate.py \
     --load_8bit \
     --base_model 'output/pretrained/llama-7b-hf' \
