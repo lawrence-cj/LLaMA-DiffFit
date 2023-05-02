@@ -105,11 +105,15 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: Alpacas are members of the camelid family and are native to the Andes Mountains of South America. They have long, shaggy coats that come in a variety of colors and can grow up to 4 feet tall. Alpacas are herbivores and graze on grasses and other plants. They are known for their gentle nature and are often kept as pets.
 
+<details><summary>OTHER METHODS</summary>
+
 **Alpaca-LoRA**: Alpacas are members of the camelid family and are native to the Andes Mountains of South America. They are known for their soft, luxurious fleece, which is used to make clothing, blankets, and other items. Alpacas are herbivores and graze on grasses and other plants. They are social animals and live in herds of up to 20 individuals.
 
 **Stanford Alpaca**: Alpacas are small, fluffy animals related to camels and llamas. They are native to Peru and Bolivia, and were first domesticated around 5,000 years ago. They are kept mainly for their fine, soft fleece, which is used to make knitwear and other garments. Alpacas are herd animals and live in small family groups, led by an older male. They are highly social animals and can form strong bonds with their owners.
 
 **text-davinci-003**: Alpacas are a domesticated species of South American camelid, similar to llamas. They are native to the Andes Mountains in South America and are kept as livestock for their soft, luxurious wool. Alpacas are social animals and live in herds of up to 20 individuals. They are typically kept in small herds of two to five animals, and are relatively easy to care for. Alpacas are herbivores and feed on grass, hay, and other vegetation. They are also known for their gentle and friendly nature, making them popular as pets.
+
+</details>
 
 ---
 
@@ -119,11 +123,15 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: The president of Mexico in 2019 was Andrés Manuel López Obrador. He was elected in July 2018 and took office on December 1, 2018. He is a member of the National Regeneration Movement (MORENA), a left-wing political party. He is known for his anti-corruption and anti-poverty policies, as well as his focus on improving Mexico's infrastructure and education system.
 
+<details><summary>OTHER METHODS</summary>
+
 **Alpaca-LoRA**: The president of Mexico in 2019 was Andrés Manuel López Obrador, who took office on December 1, 2018. He is a member of the National Regeneration Movement (MORENA) political party and is the first left-wing president of Mexico since 1946. He is known for his anti-corruption and anti-neoliberal policies, as well as his commitment to improving the living conditions of the Mexican people.
 
 **Stanford Alpaca**: In 2019, Andres Manuel Lopez Obrador was sworn in as President of Mexico. He is the country’s 58th president and the first from the left-wing Morena party. He was elected in 2018 on a promise to combat corruption and reduce poverty and has faced criticism for his handling of the economy, crime and the country’s relationship with the United States. He is also known for his ambitious social welfare programs and has been praised for raising the minimum wage and providing aid to low-income families. He is seen as a champion of democracy and human rights in Mexico.
 
 **text-davinci-003**: The president of Mexico in 2019 is Andrés Manuel López Obrador, commonly known as AMLO. He is a Mexican politician who has been the President of Mexico since December 1, 2018. He is a member of the National Regeneration Movement (MORENA) party and previously served as the Head of Government of Mexico City from 2000 to 2005. He is a left-wing populist and has promised to reduce corruption and inequality in Mexico. He has also promised to increase public spending on social programs and infrastructure projects.
+
+</details>
 
 ---
 
@@ -133,11 +141,15 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: The king of France in 2019 is Emmanuel Macron, who was elected in 2017. He is the youngest president in the history of France, and the first president from the En Marche! political movement. He is a proponent of the European Union and a strong supporter of the Paris Climate Agreement.
 
+<details><summary>OTHER METHODS</summary>
+
 **Alpaca-LoRA**: The King of France in 2019 is Emmanuel Macron, who was elected in May 2017. He is the youngest president in the history of the Fifth Republic and the first president to be born after World War II. He is also the first president to have never held elected office before.
 
 **Stanford Alpaca**: In 2019, the King of France was Emmanuel Macron. He was sworn in as President of France on May 14, 2017, and has been leading the country ever since. He is a member of the centrist La République En Marche! Party. He is known for his reformist agenda and has faced a number of protests from both the right and left of the political spectrum. He is the youngest French president in history.
 
 **text-davinci-003**: The King of France is a largely symbolic role, as France is a republic. The current President of France is Emmanuel Macron, who was elected in 2017.
+
+</details>
 
 ---
 
@@ -146,6 +158,9 @@ This file is now used by default in the training script.
 **LLaMA-DiffFit**: Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon.
 
 **LLaMA-BitFit**: Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon.
+
+<details><summary>OTHER METHODS</summary>
+
 
 **Alpaca-LoRA**: Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan
 
@@ -167,6 +182,8 @@ This file is now used by default in the training script.
 12. Saskatchewan
 13. Yukon
 
+</details>
+
 ---
 
 **Instruction**: Write a Python program that prints the first 10 Fibonacci numbers.
@@ -184,6 +201,8 @@ def fibonacci(n):
 
 print(fibonacci(10))
 ```
+
+<details><summary>OTHER METHODS</summary>
 
 **Stanford Alpaca**:
 
@@ -221,6 +240,8 @@ for i in range(2,10):
     print(c)
 ```
 
+</details>
+
 ---
 
 **Instruction**: Write a program that prints the numbers from 1 to 100. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.
@@ -238,6 +259,8 @@ for i in range(1, 101):
     else:
         print(i)
 ```
+
+<details><summary>OTHER METHODS</summary>
 
 **Stanford Alpaca**:
 
@@ -269,6 +292,8 @@ for (let i = 1; i <= 100; i++) {
 }
 ```
 
+</details>
+
 ---
 
 **Instruction**: Tell me five words that rhyme with 'shock'.
@@ -276,6 +301,8 @@ for (let i = 1; i <= 100; i++) {
 **LLaMA-DiffFit**: Shock, sock, rock, cook, and book.
 
 **LLaMA-BitFit**: Rock, stock, sock, lock, and sock.
+
+<details><summary>OTHER METHODS</summary>
 
 **Alpaca-LoRA**: Flock, lock, rock, stock, and sock.
 
@@ -289,6 +316,8 @@ for (let i = 1; i <= 100; i++) {
 4. Clock
 5. Rock
 
+</details>
+
 ---
 
 **Instruction**: Translate the sentence 'I have no mouth but I must scream' into Spanish.
@@ -297,11 +326,15 @@ for (let i = 1; i <= 100; i++) {
 
 **LLaMA-BitFit**: No tengo boca pero tengo que gritar
 
+<details><summary>OTHER METHODS</summary>
+
 **Alpaca-LoRA**: No tengo boca pero tengo que gritar.
 
 **Stanford Alpaca**: No tengo boca, pero debo gritar.
 
 **text-davinci-003**: No tengo boca pero debo gritar.
+
+</details>
 
 ---
 **Instruction**: Give me some advice on traveling to China.
@@ -311,6 +344,9 @@ When it comes to transportation, it's a good idea to use public transportation a
 
 **LLaMA-BitFit**: When traveling to China, it is important to be aware of local customs and etiquette. It is important to dress modestly and respectfully, especially when visiting temples and religious sites. 
 It is also important to be mindful of the language barrier, as many Chinese people do not speak English. Finally, it is important to be aware of the local laws and regulations, as they can vary from region to region.
+
+<details><summary>OTHER METHODS</summary>
+
 
 **Alpaca-LoRA**: When traveling to China, it is important to be aware of the local customs and etiquette. It is important to dress modestly and respectfully when visiting temples and other religious sites. It is also important to be aware of the language barrier, as many Chinese people do not speak English. It is advisable to learn some basic Mandarin phrases before traveling. Additionally, it is important to be aware of the local laws and customs, as they can vary from region to region.
 
@@ -324,6 +360,8 @@ It is also important to be mindful of the language barrier, as many Chinese peop
 6. Respect local customs and traditions.
 7. Try the local cuisine.
 8. Be aware of internet restrictions.
+
+</details>
 
 ## Contributors
 [Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
