@@ -83,7 +83,7 @@ This file is now used by default in the training script.
 
 - We can likely improve our model performance significantly if we had a better dataset. Consider supporting the [GPT-4-LLM](http://arxiv.org/abs/2304.03277) effort to produce a high-quality dataset for instruct-following task.
 - we are working on multi-round conversation functions and longer token inputs similar to [Vicuna](https://vicuna.lmsys.org/).
-- We're continually fixing bugs and conducting training runs
+- We're continually fixing bugs and conducting training runs.
 - Users with multiple GPUs should take a look [here](https://github.com/tloen/alpaca-lora/issues/8#issuecomment-1477490259).
 
 ## Overview
