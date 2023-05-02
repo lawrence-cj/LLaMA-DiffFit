@@ -106,7 +106,7 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: Alpacas are members of the camelid family and are native to the Andes Mountains of South America. They have long, shaggy coats that come in a variety of colors and can grow up to 4 feet tall. Alpacas are herbivores and graze on grasses and other plants. They are known for their gentle nature and are often kept as pets.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Alpaca-LoRA**: Alpacas are members of the camelid family and are native to the Andes Mountains of South America. They are known for their soft, luxurious fleece, which is used to make clothing, blankets, and other items. Alpacas are herbivores and graze on grasses and other plants. They are social animals and live in herds of up to 20 individuals.
 
@@ -124,7 +124,7 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: The president of Mexico in 2019 was Andrés Manuel López Obrador. He was elected in July 2018 and took office on December 1, 2018. He is a member of the National Regeneration Movement (MORENA), a left-wing political party. He is known for his anti-corruption and anti-poverty policies, as well as his focus on improving Mexico's infrastructure and education system.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Alpaca-LoRA**: The president of Mexico in 2019 was Andrés Manuel López Obrador, who took office on December 1, 2018. He is a member of the National Regeneration Movement (MORENA) political party and is the first left-wing president of Mexico since 1946. He is known for his anti-corruption and anti-neoliberal policies, as well as his commitment to improving the living conditions of the Mexican people.
 
@@ -142,7 +142,7 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: The king of France in 2019 is Emmanuel Macron, who was elected in 2017. He is the youngest president in the history of France, and the first president from the En Marche! political movement. He is a proponent of the European Union and a strong supporter of the Paris Climate Agreement.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Alpaca-LoRA**: The King of France in 2019 is Emmanuel Macron, who was elected in May 2017. He is the youngest president in the history of the Fifth Republic and the first president to be born after World War II. He is also the first president to have never held elected office before.
 
@@ -160,7 +160,7 @@ This file is now used by default in the training script.
 
 **LLaMA-BitFit**: Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 
 **Alpaca-LoRA**: Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan
@@ -261,7 +261,7 @@ for i in range(1, 101):
         print(i)
 ```
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Stanford Alpaca**:
 
@@ -303,7 +303,7 @@ for (let i = 1; i <= 100; i++) {
 
 **LLaMA-BitFit**: Rock, stock, sock, lock, and sock.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Alpaca-LoRA**: Flock, lock, rock, stock, and sock.
 
@@ -327,7 +327,7 @@ for (let i = 1; i <= 100; i++) {
 
 **LLaMA-BitFit**: No tengo boca pero tengo que gritar
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 **Alpaca-LoRA**: No tengo boca pero tengo que gritar.
 
@@ -346,7 +346,7 @@ When it comes to transportation, it's a good idea to use public transportation a
 **LLaMA-BitFit**: When traveling to China, it is important to be aware of local customs and etiquette. It is important to dress modestly and respectfully, especially when visiting temples and religious sites. 
 It is also important to be mindful of the language barrier, as many Chinese people do not speak English. Finally, it is important to be aware of the local laws and regulations, as they can vary from region to region.
 
-<details><summary>OTHER METHODS</summary>
+<details><summary>**OTHER METHODS**</summary>
 
 
 **Alpaca-LoRA**: When traveling to China, it is important to be aware of the local customs and etiquette. It is important to dress modestly and respectfully when visiting temples and other religious sites. It is also important to be aware of the language barrier, as many Chinese people do not speak English. It is advisable to learn some basic Mandarin phrases before traveling. Additionally, it is important to be aware of the local laws and customs, as they can vary from region to region.
