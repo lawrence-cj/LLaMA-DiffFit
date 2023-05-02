@@ -2,7 +2,8 @@
 
 [//]: # (-  **Try the pretrained model out [here]&#40;&#41;, courtesy of a GPU grant from Huggingface!**)
 
-This repository contains code for reproducing the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) results using [DiffFit](https://arxiv.org/abs/2304.06648).
+This repository contains codes for efficiently finetuning LLM models (i.e., LLaMA) using [DiffFit](https://arxiv.org/abs/2304.06648).
+
 
 ### Introduction
 In addition to the training code, which runs within five hours on a single GPU (Minimum 26GB GPU memory),
