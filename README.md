@@ -25,8 +25,7 @@ cd peft && python setup.py develop
 2. If bitsandbytes doesn't work, [install it from source.](https://github.com/TimDettmers/bitsandbytes/blob/main/compile_from_source.md) Windows users can follow [these instructions](https://github.com/tloen/alpaca-lora/issues/17).
 
 ### Inference (`generate.py`)
-
-This file reads the foundation model from the Hugging Face model hub and the DiffFit weights from `output`
+Please request access to the pre-trained LLaMA from [this form](https://forms.gle/jk851eBVbX1m5TAv5) (official) or download the LLaMA-7B from [Hugging Face](https://huggingface.co/nyanko7/LLaMA-7B/tree/main) (unofficial). Then, obtain the weights of our LLaMA-DiffFit from [here](DiffFit weights themselves](https://github.com/lawrence-cj/LLaMA-DiffFit/releases/tag/checkpoints). This file reads the foundation model from the Hugging Face model hub and the DiffFit weights from `output`
 ```
 cd project_dir
 python generate.py
