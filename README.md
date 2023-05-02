@@ -92,14 +92,14 @@ This file is now used by default in the training script.
 ## Overview
 **Efficiency Comparison:**
 
-|  Model | Parameters |  Checkpoint |
-| :-----: | :-----: |  :-----: |
-|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |  |
+|  Model | Parameters |
+| :-----: | :-----: |
+|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |
 |  [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) | 1.2M |
-|  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |  |
-|  LLaMA-BitFit | 1.4M |  |
-|  LLaMA-DiffFit-Lite | 0.7M |  |
-|  LLaMA-DiffFit-Normal | ??M |  |
+|  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |
+|  LLaMA-BitFit | 1.4M |
+|  LLaMA-DiffFit-Lite | 0.7M |
+|  LLaMA-DiffFit-Normal | ??M |
 
 ### Example outputs
 
