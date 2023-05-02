@@ -41,25 +41,20 @@ def generate_prompt(data_point):
     {data_point["output"]}"""
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='start training')
-    parser.add_argument('--run', default='run_tmp', help='output dir name')
-    parser.add_argument('--bs', default=64, help='batch-size')
-    args, unparsed = parser.parse_known_args()
-    return args
-
-
-def main():
-    args = parse_args()
-
-    MICRO_BATCH_SIZE = args.bs  # this could actually be 5 but i like powers of 2
-    BATCH_SIZE = 128
-    GRADIENT_ACCUMULATION_STEPS = BATCH_SIZE // MICRO_BATCH_SIZE
-    EPOCHS = 3  # we don't always need 3 tbh
-    LEARNING_RATE = 3e-4  # the Karpathy constantt
-    CUTOFF_LEN = 256  # 256 accounts for about 96% of the data
-    VAL_SET_SIZE = 2000
-    TARGET_MODULES = [
+def main(
+        # model/data params
+        base_model: str = "output/pretrained/llama-7b-hf",  # the only required argument
+        data_path: str = "alpaca_data_cleaned.json",
+        output_dir: str = "output/run_tmp",
+        # training hyperparams
+        batch_size: int = 128,
+        micro_batch_size: int = 4,
+        num_epochs: int = 3,
+        learning_rate: float = 3e-4,
+        cutoff_len: int = 256,
+        val_set_size: int = 2000,
+        # BitFit hyperparams,
+        target_modules: List[str] = [
         "q_proj",
         "v_proj",
         "k_proj",
@@ -67,27 +62,25 @@ def main():
         "gate_proj",
         "down_proj",
         "up_proj"
-    ]
-
-    DATA_PATH = "alpaca_data_cleaned.json"
-    OUTPUT_ROOT = "output"
-    OUTPUT_DIR = os.path.join(OUTPUT_ROOT, args.run)
+        ],
+        bitfit_scale: float = 2.,
+):
+    gradient_accumulation_steps = batch_size // micro_batch_size
 
     device_map = "auto"
     world_size = int(os.environ.get("WORLD_SIZE", 1))
     ddp = world_size != 1
     if ddp:
         device_map = {"": int(os.environ.get("LOCAL_RANK") or 0)}
-        GRADIENT_ACCUMULATION_STEPS = GRADIENT_ACCUMULATION_STEPS // world_size
+        gradient_accumulation_steps = gradient_accumulation_steps // world_size
 
     model = LlamaForCausalLM.from_pretrained(
-        "output/pretrained/llama-7b-hf",
+        base_model,
         load_in_8bit=True,
+        torch_dtype=torch.float16,
         device_map=device_map,
     )
-    tokenizer = LlamaTokenizer.from_pretrained(
-        "output/pretrained/llama-7b-hf", add_eos_token=True
-    )
+    tokenizer = LlamaTokenizer.from_pretrained(base_model)
 
     def tokenize(prompt):
         # there's probably a way to do this with the tokenizer settings
@@ -95,7 +88,7 @@ def main():
         result = tokenizer(
             prompt,
             truncation=True,
-            max_length=CUTOFF_LEN + 1,
+            max_length=cutoff_len + 1,
             padding="max_length",
         )
         return {
@@ -110,13 +103,13 @@ def main():
     model = prepare_model_for_int8_training(model)
 
     config = BitFitConfig(
-        target_modules=TARGET_MODULES,
+        target_modules=target_modules,
         bias="none",
         task_type="CAUSAL_LM",
-        scale=2.
+        scale=bitfit_scale
     )
     print(config)
-    print("LEARNING_RATE: ", LEARNING_RATE, "MICRO_BATCH_SIZE: ", MICRO_BATCH_SIZE, "OUTPUT_DIR: ", args.run)
+    print("LEARNING_RATE: ", learning_rate, "MICRO_BATCH_SIZE: ", micro_batch_size, "OUTPUT_DIR: ", output_dir)
 
     model = get_peft_model(model, config)
 
@@ -128,11 +121,11 @@ def main():
             param.requires_grad = False
 
     tokenizer.pad_token_id = 0  # unk. we want this to be different from the eos token
-    data = load_dataset("json", data_files=DATA_PATH)
+    data = load_dataset("json", data_files=data_path)
 
-    if VAL_SET_SIZE > 0:
+    if val_set_size > 0:
         train_val = data["train"].train_test_split(
-            test_size=VAL_SET_SIZE, shuffle=True, seed=42
+            test_size=val, shuffle=True, seed=42
         )
         train_data = train_val["train"].shuffle().map(generate_and_tokenize_prompt)
         val_data = train_val["test"].shuffle().map(generate_and_tokenize_prompt)
@@ -145,20 +138,20 @@ def main():
         train_dataset=train_data,
         eval_dataset=val_data,
         args=transformers.TrainingArguments(
-            per_device_train_batch_size=MICRO_BATCH_SIZE,
-            gradient_accumulation_steps=GRADIENT_ACCUMULATION_STEPS,
+            per_device_train_batch_size=micro_batch_size,
+            gradient_accumulation_steps=gradient_accumulation_steps,
             warmup_steps=100,
-            num_train_epochs=EPOCHS,
-            learning_rate=LEARNING_RATE,
+            num_train_epochs=num_epochs,
+            learning_rate=learning_rate,
             fp16=True,
             logging_steps=20,
-            evaluation_strategy="steps" if VAL_SET_SIZE > 0 else "no",
+            evaluation_strategy="steps" if val_set_size > 0 else "no",
             save_strategy="steps",
-            eval_steps=200 if VAL_SET_SIZE > 0 else None,
+            eval_steps=200 if val_set_size > 0 else None,
             save_steps=200,
-            output_dir=OUTPUT_DIR,
+            output_dir=output_dir,
             save_total_limit=3,
-            load_best_model_at_end=True if VAL_SET_SIZE > 0 else False,
+            load_best_model_at_end=True if val_set_size > 0 else False,
             ddp_find_unused_parameters=False if ddp else None,
             report_to='none',
         ),
@@ -176,10 +169,11 @@ def main():
 
     trainer.train()
 
-    model.save_pretrained(OUTPUT_DIR)
+    model.save_pretrained(output_dir)
 
     print("\n If there's a warning about missing keys above, please disregard :)")
 
 
 if __name__ == "__main__":
-    main()
+    import fire
+    fire.Fire(main)
