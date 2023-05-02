@@ -1,4 +1,4 @@
-## 🦙 LLaMA-DiffFit: Efficient Finetuning LLaMA with Official DiffFit
+## 🦙 LLaMA-DiffFit: Efficient Finetuning LLaMA with DiffFit
 
 [//]: # (-  **Try the pretrained model out [here]&#40;&#41;, courtesy of a GPU grant from Huggingface!**)
 
