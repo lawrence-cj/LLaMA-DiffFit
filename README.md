@@ -287,6 +287,19 @@ When it comes to transportation, it's a good idea to use public transportation a
 **LLaMA-BitFit**: When traveling to China, it is important to be aware of local customs and etiquette. It is important to dress modestly and respectfully, especially when visiting temples and religious sites. 
 It is also important to be mindful of the language barrier, as many Chinese people do not speak English. Finally, it is important to be aware of the local laws and regulations, as they can vary from region to region.
 
+**Alpaca-LoRA**: When traveling to China, it is important to be aware of the local customs and etiquette. It is important to dress modestly and respectfully when visiting temples and other religious sites. It is also important to be aware of the language barrier, as many Chinese people do not speak English. It is advisable to learn some basic Mandarin phrases before traveling. Additionally, it is important to be aware of the local laws and customs, as they can vary from region to region.
+
+**text-davinci-003**: Sure, here are some brief tips for traveling to China:
+
+1. Plan your trip in advance.
+2. Learn some basic Mandarin.
+3. Be prepared for cultural differences.
+4. Bring cash and a credit card.
+5. Take precautions for air pollution.
+6. Respect local customs and traditions.
+7. Try the local cuisine.
+8. Be aware of internet restrictions.
+
 ## Contributors
 [Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
 
