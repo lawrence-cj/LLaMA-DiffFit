@@ -37,8 +37,8 @@ python generate.py \
 ### Training (`finetune.py`)
 
 This file contains a straightforward application of PEFT with DiffFit to the LLaMA model,
-as well as some code related to prompt construction and tokenization.
-Near the top of this file is a set of hardcoded hyper-parameters that you should feel free to modify.
+as well as some codes related to prompt construction and tokenization.
+Near the top of this file is a set of hardcoded hyper-parameters that you could feel free to modify.
 PRs adapting this code to support larger models are always welcome.
 ```
 cd project_dir
@@ -47,7 +47,7 @@ python finetune_difffit.py \
     --data_path 'alpaca_data_cleaned.json' \
     --output_dir 'output/llama_difffit'
 ```
-We can also tweak our hyperparameters:
+You can also tweak the hyperparameters:
 
 ```
 python finetune.py \
@@ -81,7 +81,7 @@ This file is now used by default in the training script.
 
 ### Notes
 
-- We can likely improve our model performance significantly if we had a better dataset. Consider supporting the [GPT-4-LLM](http://arxiv.org/abs/2304.03277) effort to produce a high-quality dataset for instruct-following task.
+- We can likely improve our model performance significantly if a better dataset is available. Consider supporting the [GPT-4-LLM](http://arxiv.org/abs/2304.03277) effort to produce a high-quality dataset for instruct-following tasks.
 - we are working on multi-round conversation functions and longer token inputs similar to [Vicuna](https://vicuna.lmsys.org/).
 - We're continually fixing bugs and conducting training runs.
 - Users with multiple GPUs should take a look [here](https://github.com/tloen/alpaca-lora/issues/8#issuecomment-1477490259).
