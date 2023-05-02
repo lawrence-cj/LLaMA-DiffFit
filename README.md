@@ -200,6 +200,7 @@ This file is now used by default in the training script.
 
 **LLaMA-DiffFit**:
 
+```
 def fib(n):
     if n == 0:
         return 0
