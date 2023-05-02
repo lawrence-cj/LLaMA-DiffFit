@@ -291,7 +291,7 @@ It is also important to be mindful of the language barrier, as many Chinese peop
 [Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
 
 ## Citation
-If you find our LLaMA-Adapter code and paper useful, please kindly cite:
+If you find our DiffFit and this project useful, please kindly cite:
 ```bash
 @article{zhang2023llamaadapter,
   title = {LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention},
