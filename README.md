@@ -4,13 +4,12 @@
 
 This repository contains code for reproducing the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) results using [DiffFit](https://arxiv.org/abs/2304.06648).
 
+### Introduction
 In addition to the training code, which runs within five hours on a single GPU (Minimum 26GB GPU memory),
 we publish a script for downloading and inference on the foundation model and DiffFit,
 as well as the resulting [DiffFit weights themselves](https://github.com/lawrence-cj/LLaMA-DiffFit/releases/tag/checkpoints).
 To fine-tune cheaply and efficiently, we use Hugging Face's [PEFT](./peft) with DiffFit supported
-as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandbytes).
-
-with DiffFit finetuning, the model perform camparable to the Stanford Alpaca model.
+as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandbytes). With DiffFit finetuning, the model perform camparable to the Stanford Alpaca model.
 
 ### Setup
 
@@ -339,15 +338,7 @@ If you find our DiffFit and this project useful, please kindly cite:
   year={2023}
 }
 ``` 
-```bash
-@misc{LLaMADiffFit2023,
-    title = {LLaMA-DiffFit: Efficient Finetuning LLaMA with DiffFit},
-    url = {https://github.com/lawrence-cj/LLaMA-DiffFit},
-    author = {Chen, Junsong and Ge Chongjian and Xie Enze},
-    month = {May},
-    year = {2023}
-}
-```
+
 
 
 ## Acknowledgement
