@@ -68,10 +68,10 @@ python finetune_difffit.py \
     --learning_rate 3e-4 \
     --cutoff_len 512 \
     --val_set_size 2000 \
-    --target_modules '[q_proj,v_proj, k_proj, o_proj]' \
+    --target_modules '[q_proj,v_proj, k_proj, o_proj, gate_proj, down_proj, up_proj]' \
     --eta_scale 1. \
     --eta_layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] \
-    --eta_exclude '["gate_proj", "down_proj", "up_proj"]' \
+    --eta_exclude '[gate_proj, down_proj, up_proj]' \
 ```
 
 (Optional) Training with BitFit is also supported here
