@@ -52,7 +52,7 @@ PRs adapting this code to support larger models are always welcome.
 cd project_dir
 python finetune_difffit.py \
     --base_model 'output/pretrained/llama-7b-hf' \
-    --data_path 'alpaca_data_cleaned.json' \
+    --data_path 'alpaca_data_cleaned_archive.json' \
     --output_dir 'output/llama_difffit'
 ```
 You can also tweak the hyperparameters:
@@ -60,7 +60,7 @@ You can also tweak the hyperparameters:
 ```
 python finetune_difffit.py \
     --base_model 'output/pretrained/llama-7b-hf' \
-    --data_path 'alpaca_data_cleaned.json' \
+    --data_path 'alpaca_data_cleaned_archive.json' \
     --output_dir 'output/llama_difffit' \
     --batch_size 128 \
     --micro_batch_size 4 \
@@ -68,9 +68,10 @@ python finetune_difffit.py \
     --learning_rate 3e-4 \
     --cutoff_len 512 \
     --val_set_size 2000 \
+    --target_modules '[q_proj,v_proj, k_proj, o_proj]' \
     --eta_scale 1. \
     --eta_layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] \
-    --target_modules '[q_proj,v_proj, k_proj, o_proj]' \
+    --eta_exclude '["gate_proj", "down_proj", "up_proj"]' \
 ```
 
 (Optional) Training with BitFit is also supported here
@@ -78,7 +79,7 @@ python finetune_difffit.py \
 cd project_dir
 python finetune_bitfit.py \
     --base_model 'output/pretrained/llama-7b-hf' \
-    --data_path 'alpaca_data_cleaned.json' \
+    --data_path 'alpaca_data_cleaned_archive.json' \
     --output_dir 'output/llama_bitfit'
 ```
 
