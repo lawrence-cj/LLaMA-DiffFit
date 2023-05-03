@@ -14,7 +14,7 @@ as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandby
 
 ### Setup
 
-1. Install dependencies
+1. Install dependencies (We develop on a specific Huggingface/transformers version: 4.28.0.dev0. If you find any unreasonable answer from the model, please double check the package version in requirements.txt.)
 
 ```
 conda create -n llama-difffit python==3.10.0
@@ -38,7 +38,6 @@ This file reads the foundation model from the Hugging Face model hub and the Dif
 cd project_dir
 unzip download_zip_file_name.zip ./output/
 python generate.py \
-    --load_8bit \
     --base_model 'output/pretrained/llama-7b-hf' \
     --peft_weights 'output/llama_difffit'
 ```
@@ -59,19 +58,19 @@ python finetune_difffit.py \
 You can also tweak the hyperparameters:
 
 ```
-python finetune.py \
+python finetune_difffit.py \
     --base_model 'output/pretrained/llama-7b-hf' \
     --data_path 'alpaca_data_cleaned.json' \
     --output_dir 'output/llama_difffit' \
     --batch_size 128 \
     --micro_batch_size 4 \
     --num_epochs 3 \
-    --learning_rate 1e-4 \
+    --learning_rate 3e-4 \
     --cutoff_len 512 \
     --val_set_size 2000 \
     --eta_scale 1. \
     --eta_layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] \
-    --target_modules '[q_proj,v_proj]' \
+    --target_modules '[q_proj,v_proj, k_proj, o_proj]' \
 ```
 
 (Optional) Training with BitFit is also supported here
@@ -106,6 +105,14 @@ This file is now used by default in the training script.
 |  LLaMA-BitFit | 1.4M |
 |  LLaMA-DiffFit-Lite | 0.7M |
 |  LLaMA-DiffFit-Normal | ??M |
+
+BitFit stands for fine-tuning **all the bias in linear projection layers** in the LLaMA model.
+
+DiffFit-Lite stands for fine-tuning the **first 13 layers' bias and scale in q, k, v and output linear projection layers** in the LLaMA model.
+
+DiffFit-Normal stands for fine-tuning the **first 13 layers' scale in q, k, v and output linear projection layers** and **all the bias in the linear projection layers** in the LLaMA model.
+
+More details could be found in our [DiffFit paper](https://arxiv.org/abs/2304.06648).
 
 ### Example outputs
 
