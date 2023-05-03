@@ -17,9 +17,15 @@ as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandby
 1. Install dependencies
 
 ```
+conda create -n llama-difffit python==3.10.0
+Conda activate llama-difffit
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia (or pip3 install torch torch vision torchaudio)
+
 cd project_dir
 pip install -r requirements.txt
+
 cd peft && python setup.py develop
+cd project
 ```
 
 2. If bitsandbytes doesn't work, [install it from source.](https://github.com/TimDettmers/bitsandbytes/blob/main/compile_from_source.md) Windows users can follow [these instructions](https://github.com/tloen/alpaca-lora/issues/17).
@@ -89,17 +95,17 @@ This file is now used by default in the training script.
 - We're continually fixing bugs and conducting training runs.
 - Users with multiple GPUs should take a look [here](https://github.com/tloen/alpaca-lora/issues/8#issuecomment-1477490259).
 
-## Overview
+### Overview
 **Efficiency Comparison:**
 
-|  Model | Parameters |  Checkpoint |
-| :-----: | :-----: |  :-----: |
-|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |  |
+|  Model | Parameters |
+| :-----: | :-----: |
+|  [Alpaca](https://github.com/tatsu-lab/stanford_alpaca) | 7B |
 |  [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) | 1.2M |
-|  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |  |
-|  LLaMA-BitFit | 1.4M |  |
-|  LLaMA-DiffFit-Lite | 0.7M |  |
-|  LLaMA-DiffFit-Normal | ??M |  |
+|  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |
+|  LLaMA-BitFit | 1.4M |
+|  LLaMA-DiffFit-Lite | 0.7M |
+|  LLaMA-DiffFit-Normal | ??M |
 
 ### Example outputs
 
@@ -192,7 +198,21 @@ This file is now used by default in the training script.
 
 **Instruction**: Write a Python program that prints the first 10 Fibonacci numbers.
 
-**LLaMA-DiffFit & LLaMA-BitFit & Alpaca-LoRA with the same result**:
+**LLaMA-DiffFit**:
+
+```python
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(fib(10))
+```
+
+**LLaMA-BitFit & Alpaca-LoRA have the same result**:
 
 ```python
 def fibonacci(n):
@@ -367,10 +387,10 @@ It is also important to be mindful of the language barrier, as many Chinese peop
 
 </details>
 
-## Contributors
+### Contributors
 [Junsong Chen](https://github.com/lawrence-cj), [Chongjian Ge](https://chongjiange.github.io/), [Enze Xie](https://xieenze.github.io/)
 
-## Citation
+### Citation
 If you find our DiffFit and this project useful, please kindly cite:
 ```bash
 @article{xie2023difffit,
@@ -391,5 +411,5 @@ If you find our DiffFit and this project useful, please kindly cite:
 
 
 
-## Acknowledgement
+### Acknowledgement
 This repo benefits from [LLaMA](https://github.com/facebookresearch/llama), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Alpaca-Lora](https://github.com/tloen/alpaca-lora), [LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter) and [Vicuna](https://vicuna.lmsys.org). Thanks for their wonderful works.
