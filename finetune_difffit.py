@@ -55,7 +55,7 @@ def main(
         cutoff_len: int = 256,
         val_set_size: int = 2000,
         # DiffFit hyperparams,
-        target_modules: List[str] = [
+        target_modules: list[str] = [
         "q_proj",
         "v_proj",
         "k_proj",
@@ -65,7 +65,7 @@ def main(
         # "up_proj"
         ],
         eta_scale: float = 1.,
-        eta_layers: List[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        eta_layers: list[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
         # eta_layers : List[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 100],    # 100 means all layers
         # llm hyperparams
         train_on_inputs: bool = True,  # if False, masks out inputs in loss
