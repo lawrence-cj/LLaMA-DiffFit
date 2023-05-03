@@ -120,6 +120,12 @@ def main(
         else:
             param.requires_grad = False
 
+    # Trainable Parameters Calculation
+    params_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad) / 1e6
+    params_total = sum(p.numel() for p in model.parameters()) / 1e6
+    print('params_trainable: ', params_trainable)
+    print('params_total: ', params_total)
+
     tokenizer.pad_token_id = 0  # unk. we want this to be different from the eos token
     data = load_dataset("json", data_files=data_path)
 

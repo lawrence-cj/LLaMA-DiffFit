@@ -95,6 +95,12 @@ class DiffFitConfig(PeftConfig):
             "help": "DiffFit scale."
         },
     )
+    eta_exclude: Optional[Union[List[str], str]] = field(
+        default=None,
+        metadata={
+            "help": "Exclude defaults layers form bias fine-tuning."
+        },
+    )
 
     def __post_init__(self):
         self.peft_type = PeftType.DIFFFIT
@@ -141,6 +147,7 @@ class DiffFitModel(torch.nn.Module):
         self.forward = self.model.forward
         self.peft_config = config
         self.eta_layers = 'all' if 100 in self.peft_config[adapter_name].eta_layers else self.peft_config[adapter_name].eta_layers
+        self.eta_exclude = self.peft_config[adapter_name].eta_exclude
         self.add_adapter(adapter_name, self.peft_config[adapter_name])
 
     def add_adapter(self, adapter_name, config=None):
@@ -182,10 +189,10 @@ class DiffFitModel(torch.nn.Module):
                 parent, target, target_name = _get_submodules(self.model, key)
                 bias = target.bias is not None
                 try:
-                    if self.eta_layers == 'all':
-                        eta = 1.
+                    if self.eta_layers == 'all' or int(key.split('.')[2]) in self.eta_layers and target_name not in self.eta_exclude:
+                        eta = eta_scale
                     else:
-                        eta = eta_scale if int(key.split('.')[2]) in self.eta_layers else None
+                        eta = None
                 except:
                     eta = None
                 if isinstance(target, DiffFitLayer):

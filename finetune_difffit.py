@@ -60,13 +60,14 @@ def main(
         "v_proj",
         "k_proj",
         "o_proj",
-        # "gate_proj",
-        # "down_proj",
-        # "up_proj"
+        "gate_proj",
+        "down_proj",
+        "up_proj"
         ],
         eta_scale: float = 1.,
         eta_layers: list[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
         # eta_layers : List[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 100],    # 100 means all layers
+        eta_exclude: list[str] = ["gate_proj", "down_proj", "up_proj"],
         # llm hyperparams
         train_on_inputs: bool = True,  # if False, masks out inputs in loss
         add_eos_token: bool = True,
@@ -130,7 +131,8 @@ def main(
         bias="none",
         task_type="CAUSAL_LM",
         eta_scale=eta_scale,
-        eta_layers=eta_layers
+        eta_layers=eta_layers,
+        eta_exclude=eta_exclude,
     )
     print(config)
     print("LEARNING_RATE: ", learning_rate, "MICRO_BATCH_SIZE: ", micro_batch_size, "OUTPUT_DIR: ", output_dir)
@@ -143,6 +145,12 @@ def main(
             param.requires_grad = True
         else:
             param.requires_grad = False
+
+    # Trainable Parameters Calculation
+    params_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad) / 1e6
+    params_total = sum(p.numel() for p in model.parameters()) / 1e6
+    print('params_trainable: ', params_trainable)
+    print('params_total: ', params_total)
 
     tokenizer.pad_token_id = 0  # unk. we want this to be different from the eos token
     data = load_dataset("json", data_files=data_path)
