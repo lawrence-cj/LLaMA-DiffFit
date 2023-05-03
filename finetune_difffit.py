@@ -74,7 +74,7 @@ def main(
 ):
     if int(os.environ.get("LOCAL_RANK", 0)) == 0:
         print(
-            f"Training Alpaca-LoRA model with params:\n"
+            f"Training LLaMA-DiffFit model with params:\n"
             f"base_model: {base_model}\n"
             f"data_path: {data_path}\n"
             f"output_dir: {output_dir}\n"
@@ -84,12 +84,9 @@ def main(
             f"learning_rate: {learning_rate}\n"
             f"cutoff_len: {cutoff_len}\n"
             f"val_set_size: {val_set_size}\n"
-            f"lora_target_modules: {lora_target_modules}\n"
             f"train_on_inputs: {train_on_inputs}\n"
             f"add_eos_token: {add_eos_token}\n"
             f"group_by_length: {group_by_length}\n"
-            f"resume_from_checkpoint: {resume_from_checkpoint or False}\n"
-            f"prompt template: {prompt_template_name}\n"
         )
     gradient_accumulation_steps = batch_size // micro_batch_size
 
@@ -178,7 +175,7 @@ def main(
             save_steps=200,
             output_dir=output_dir,
             save_total_limit=3,
-            load_best_model_at_end=True if VAL_SET_SIZE > 0 else False,
+            load_best_model_at_end=True if val_set_size > 0 else False,
             ddp_find_unused_parameters=False if ddp else None,
             report_to='none',
         ),
