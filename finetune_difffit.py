@@ -45,7 +45,7 @@ def generate_prompt(data_point):
 def main(
         # model/data params
         base_model: str = "output/pretrained/llama-7b-hf",  # the only required argument
-        data_path: str = "alpaca_data_cleaned.json",
+        data_path: str = "alpaca_data_cleaned_archive.json",
         output_dir: str = "output/run_tmp",
         # training hyperparams
         batch_size: int = 128,

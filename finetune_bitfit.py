@@ -44,7 +44,7 @@ def generate_prompt(data_point):
 def main(
         # model/data params
         base_model: str = "output/pretrained/llama-7b-hf",  # the only required argument
-        data_path: str = "alpaca_data_cleaned.json",
+        data_path: str = "alpaca_data_cleaned_archive.json",
         output_dir: str = "output/run_tmp",
         # training hyperparams
         batch_size: int = 128,
@@ -54,7 +54,7 @@ def main(
         cutoff_len: int = 256,
         val_set_size: int = 2000,
         # BitFit hyperparams,
-        target_modules: List[str] = [
+        target_modules: list[str] = [
         "q_proj",
         "v_proj",
         "k_proj",
@@ -131,7 +131,7 @@ def main(
 
     if val_set_size > 0:
         train_val = data["train"].train_test_split(
-            test_size=val, shuffle=True, seed=42
+            test_size=val_set_size, shuffle=True, seed=42
         )
         train_data = train_val["train"].shuffle().map(generate_and_tokenize_prompt)
         val_data = train_val["test"].shuffle().map(generate_and_tokenize_prompt)
