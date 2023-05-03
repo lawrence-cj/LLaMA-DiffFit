@@ -14,7 +14,7 @@ as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandby
 
 ### Setup
 
-1. Install dependencies
+1. Install dependencies (We develop on a specific Huggingface/transformers version: 4.28.0.dev0. If you find any unreasonable answer from the model, please double check the package version in requirements.txt.)
 
 ```
 conda create -n llama-difffit python==3.10.0
