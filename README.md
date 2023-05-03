@@ -18,7 +18,7 @@ as well as Tim Dettmers' [bitsandbytes](https://github.com/TimDettmers/bitsandby
 
 ```
 conda create -n llama-difffit python==3.10.0
-Conda activate llama-difffit
+conda activate llama-difffit
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia (or pip3 install torch torch vision torchaudio)
 
 cd project_dir
