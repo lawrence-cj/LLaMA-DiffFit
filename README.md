@@ -25,7 +25,7 @@ cd project_dir
 pip install -r requirements.txt
 
 cd peft && python setup.py develop
-cd project
+cd project_dir
 ```
 
 2. If bitsandbytes doesn't work, [install it from source.](https://github.com/TimDettmers/bitsandbytes/blob/main/compile_from_source.md) Windows users can follow [these instructions](https://github.com/tloen/alpaca-lora/issues/17).
@@ -58,6 +58,7 @@ python finetune_difffit.py \
 You can also tweak the hyperparameters:
 
 ```
+cd project_dir
 python finetune_difffit.py \
     --base_model 'output/pretrained/llama-7b-hf' \
     --data_path 'alpaca_data_cleaned_archive.json' \
