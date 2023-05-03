@@ -106,7 +106,7 @@ This file is now used by default in the training script.
 |  LLaMA-DiffFit-Lite | 0.7M |
 |  LLaMA-DiffFit-Normal | ??M |
 
-BitFit stands for fine-tuning all the bias in linear projection layers in the LLaMA model.
+BitFit stands for fine-tuning **all the bias in linear projection layers** in the LLaMA model.
 
 DiffFit-Lite stands for fine-tuning the **first 13 layers' bias and scale in q, k, v and output linear projection layers** in the LLaMA model.
 
