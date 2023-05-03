@@ -104,7 +104,7 @@ This file is now used by default in the training script.
 |  [LLaMA-LoRA](https://github.com/tloen/alpaca-lora) | 6.7M |
 |  LLaMA-BitFit | 1.4M |
 |  LLaMA-DiffFit-Lite | 0.7M |
-|  LLaMA-DiffFit-Normal | ??M |
+|  LLaMA-DiffFit-Normal | 1.6M |
 
 BitFit stands for fine-tuning **all the bias in linear projection layers** in the LLaMA model.
 
