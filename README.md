@@ -1,9 +1,9 @@
 ## 🦙 LLaMA-DiffFit: Efficient Finetuning LLaMA with DiffFit
-
-[//]: # (-  **Try the pretrained model out [here]&#40;&#41;, courtesy of a GPU grant from Huggingface!**)
-
 This repository contains codes for efficiently finetuning LLM models (e.g., LLaMA) using [DiffFit](https://arxiv.org/abs/2304.06648).
 
+<p align="center">                                                                                                                                          
+<img src="docs/LLaMA-DiffFit.jpg"/ width="15%"> <br>
+</p>
 
 ### Introduction
 In addition to the training code, which runs within five hours on a single GPU (Minimum 26GB GPU memory),
